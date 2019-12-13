@@ -153,6 +153,7 @@ public class MainActivity extends AppCompatActivity implements BaseAdapter.OnIte
                 break;
         }
         return super.onOptionsItemSelected(item);
+        
     }
 
     public void requestImage(final Boolean loadMore) {
