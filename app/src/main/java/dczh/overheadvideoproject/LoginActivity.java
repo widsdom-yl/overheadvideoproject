@@ -1,6 +1,7 @@
 package dczh.overheadvideoproject;
 
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,6 +14,7 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
@@ -34,7 +36,7 @@ import okhttp3.Response;
 //api  接口
 //https://www.showdoc.cc/317380933238324?page_id=3066526587074786
 
-public class LoginActivity extends BaseAppCompatActivity {
+public class LoginActivity extends BaseAppCompatActivity implements View.OnClickListener {
 
     private final static String tag = "LoginActivity";
     LoadingDialog lod;
@@ -44,12 +46,14 @@ public class LoginActivity extends BaseAppCompatActivity {
     private AutoCompleteTextView mUserView;
     private EditText mPasswordView;
     AppCompatCheckBox checkbox;
+    RelativeLayout relativeLayout ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
         android.support.v7.app.ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
         if (actionBar != null)
         {
             setCustomTitle(getString(R.string.action_sign_in), false);
@@ -59,7 +63,8 @@ public class LoginActivity extends BaseAppCompatActivity {
         IsAutoLogin = AccountManager.getInstance().getIsRemeberAccount();
 
 
-
+        relativeLayout = findViewById(R.id.relativeLayout);
+        relativeLayout.setOnClickListener(this);
         mUserView = (AutoCompleteTextView) findViewById(R.id.user_textview);
         mPasswordView = (EditText) findViewById(R.id.editText_password);
 
@@ -94,6 +99,7 @@ public class LoginActivity extends BaseAppCompatActivity {
                 attemptLogin();
             }
         });
+
 
     }
 
@@ -227,4 +233,18 @@ public class LoginActivity extends BaseAppCompatActivity {
     }
 
 
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.relativeLayout:
+
+                if (view != null) {
+                    InputMethodManager inputMethodManager = (InputMethodManager) LoginActivity.this.getSystemService(Activity.INPUT_METHOD_SERVICE);
+                    inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+                }
+                break;
+                default:
+                    break;
+        }
+    }
 }

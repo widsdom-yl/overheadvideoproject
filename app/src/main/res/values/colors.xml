@@ -4,7 +4,10 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="White">#FFFFFF</color>
+    <color name="lightGrey">#d0d0d0</color>
     <color name="Red">#FF0000</color>
+    <color name="LightRed">#F96269</color>
+
     <color name="appGreenColor">#0d8273</color>
     <color name="appGreenColorHighlight">#1d6243</color>
 </resources>

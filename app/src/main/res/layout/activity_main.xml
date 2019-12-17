@@ -11,46 +11,62 @@
         android:id="@+id/swipe_refresh"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="100dp"
+        android:layout_marginBottom="0dp"
         android:dividerHeight="1dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" >
+        app:layout_constraintTop_toTopOf="parent">
+
         <android.support.v7.widget.RecyclerView
             android:id="@+id/imageListView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-           />
+            android:layout_width="276dp"
+            android:layout_height="232dp"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="271dp" />
     </com.github.nuptboyzhb.lib.SuperSwipeRefreshLayout>
 
 
-    <Button
-        android:id="@+id/button_capture"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
+    <View
+        android:id="@+id/centerView"
+        android:layout_width="1dp"
+        android:layout_height="10dp"
         android:layout_marginBottom="20dp"
-        android:layout_marginStart="60dp"
-        android:background="@drawable/button_green_corner"
-        android:text="@string/string_capture"
-        android:textColor="@color/White"
-
-        android:textSize="18sp"
+        android:background="@color/White"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
 
     <Button
         android:id="@+id/button_speech"
-        android:layout_width="100dp"
+        android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginBottom="20dp"
-        android:layout_marginEnd="60dp"
-        android:background="@drawable/button_green_corner"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/button_red_corner"
         android:text="@string/string_speech"
         android:textColor="@color/White"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/centerView" />
+
+    <Button
+        android:id="@+id/button_capture"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="16dp"
+        android:background="@drawable/button_green_corner"
+        android:text="@string/string_capture"
+        android:textColor="@color/White"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/centerView"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </android.support.constraint.ConstraintLayout>

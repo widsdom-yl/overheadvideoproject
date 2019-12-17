@@ -3,8 +3,7 @@ package dczh.overheadvideoproject;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.DividerItemDecoration;
-import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -74,9 +73,11 @@ public class MainActivity extends AppCompatActivity implements BaseAdapter.OnIte
 
         imageRecyclerView = findViewById(R.id.imageListView);
 
-        imageRecyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
-        imageRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+       // imageRecyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
+      //  imageRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
+        GridLayoutManager layoutManage = new GridLayoutManager(this, 2);
+        imageRecyclerView.setLayoutManager(layoutManage);
         button_capture = findViewById(R.id.button_capture);
         button_speech = findViewById(R.id.button_speech);
         button_capture.setOnClickListener(this);
@@ -153,7 +154,7 @@ public class MainActivity extends AppCompatActivity implements BaseAdapter.OnIte
                 break;
         }
         return super.onOptionsItemSelected(item);
-        
+
     }
 
     public void requestImage(final Boolean loadMore) {
